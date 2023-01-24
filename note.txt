@@ -1,0 +1,33 @@
+Section 3 Lesson 21( Project 2 M.city) Installation
+NOTe —> checking react verions
+	npm view react version
+	npm view react-native version.
+	install a pertinent
+	Installation
+		material-ui ==> https://mui.com/material-ui/getting-started/installation/
+		Formik ==> formik.org  ( it is used to add validation to forms) npm install formik --save
+			 ==> a cool library called yup.. good for validating email etc ( with this we do not need to use our reg expression to evaluate.)
+					npm install yup --save
+		react-awesome- reveal  ===> npm install react-awesome-reveal —save
+		React router —> https://github.com/remix-run/react-router/blob/main/docs/start/tutorial.md
+					npm install react-router-dom
+===========================================================================================
+Lesson 22 (The Header)
+	Here we are going to create the routes
+
+Lesson 23(Creating footer and logo)
+
+Lesson 24(The sign in form)
+	using Formik ==> https://formik.org/docs/overview
+		Yup ==> https://github.com/jquense/yup
+
+Lesson 25(Sign in user) we will be using firebase…
+	using .auth().onAuthStateChanged((user) => {
+    			ReactDOM.render(<App user={user} />, document.getElementById('root'))
+		})
+	Now we have routes enbeded in App
+		const App = (props) => {
+   			 return (
+        				<Routes {...props} />
+    			)
+		}

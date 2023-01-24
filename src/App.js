@@ -1,11 +1,11 @@
 import React from 'react';
+//import { firebase } from './firebase';
+import Routes from './routes';
 
 
-const App = () => {
+const App = (props) => {
     return (
-        <>
-            react app is working and ready to go.
-        </>
+        <Routes {...props} />
     )
 }
 
