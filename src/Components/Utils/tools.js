@@ -3,6 +3,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 import mcitylogo from '../../Resources/images/logos/manchester_city_logo.png';
+import { toast } from 'react-toastify';
 
 export const CityLogo = (props) => {
     const template = <div
@@ -13,7 +14,6 @@ export const CityLogo = (props) => {
             background:`url(${mcitylogo}) no-repeat`
         }}
     ></div>
-
     if(props.link){
         return (
             <Link className="link_logo" to={props.linkTo}>
@@ -24,4 +24,16 @@ export const CityLogo = (props) => {
         return template
     }
 
+}
+
+export const showErrorToast = (msg) => {
+    toast.error(msg, {
+        position: toast.POSITION.TOP_LEFT
+    })
+}
+
+export const showSuccessToast = (msg) => {
+    toast.success(msg,{
+        position: toast.POSITION.TOP_LEFT
+    })
 }
