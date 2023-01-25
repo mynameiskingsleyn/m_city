@@ -1,9 +1,10 @@
 import React from 'react';
 
-import { Link } from 'react-router-dom';
+import { Link, Redirect } from 'react-router-dom';
 
 import mcitylogo from '../../Resources/images/logos/manchester_city_logo.png';
 import { toast } from 'react-toastify';
+import { firebase } from '../../database/firebase';
 
 export const CityLogo = (props) => {
     const template = <div
@@ -24,6 +25,16 @@ export const CityLogo = (props) => {
         return template
     }
 
+}
+
+export const logoutHandler = () => {
+    firebase.auth().signOut()
+    .then(() => {
+        showSuccessToast('Good bye');
+        return <Redirect to="/sign_in"/>
+    }).catch(error => {
+        showErrorToast(error.message);
+    })
 }
 
 export const showErrorToast = (msg) => {

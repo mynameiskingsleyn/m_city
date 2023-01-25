@@ -2,22 +2,12 @@ import React from 'react';
 import { AppBar, Toolbar, Button } from '@material-ui/core';
 
 import { Link } from 'react-router-dom';
-import { CityLogo, showErrorToast, showSuccessToast } from '../Utils/tools';
-import { firebase } from '../../database/firebase';
+import { CityLogo, showErrorToast, showSuccessToast, logoutHandler } from '../Utils/tools';
 import { Redirect } from 'react-router-dom';
 
 
 const Header = ({user}) => {
     
-    const logoutHandler = () => {
-        firebase.auth().signOut()
-        .then(() => {
-            showSuccessToast('Good bye');
-            return <Redirect to="/sign_in"/>
-        }).catch(error => {
-            showErrorToast(error.message);
-        })
-    }
     return(
         <>
             <AppBar
